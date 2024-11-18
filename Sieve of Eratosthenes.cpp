@@ -1,18 +1,18 @@
-#include <iostream>
-#include <vector>
+#include<iostream>
+#include<vector>
 using namespace std;
 
-void sieveOfEratosthenes(int limit) {
+void sieveOfEratosthenes(int limit){
 	//creating vector and initializing all to true
-    vector<bool> isPrime(limit + 1, true);
+    vector<bool> isPrime(limit+1,true);
     // 0 and 1 are not prime numbers
-    isPrime[0] = isPrime[1] = false;
+    isPrime[0]=isPrime[1]=false;
     
     //Sieve algorithm
-    for (int i = 2; i * i <= limit; i++) {
-        if (isPrime[i]) {
+    for (int i=2;i*i<=limit;i++){
+        if (isPrime[i]){
             // Mark multiples of i as non-prime
-            for (int j = i * i; j <= limit; j += i) {
+            for (int j=i*i;j<=limit;j+=i){
                 isPrime[j] = false;
             }
         }
